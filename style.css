@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #000;
+}
+
+canvas {
+  display: block;
+}
+/* ==============================================#
+ */
+/* Konteynerni ekranning o'rtasiga chiqarish */
+.custom-search-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Canvas'dan ustun turishi uchun */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Orqadagi animatsiyaga xalaqit bermaslik uchun */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(18, 18, 18, 0.8); /* Bir oz shaffof qora */
+  border: 1px solid #333;
+  border-radius: 50px;
+  padding: 5px 5px 5px 20px;
+  width: 90%;
+  max-width: 500px;
+  backdrop-filter: blur(
+    5px
+  ); /* Orqa fonni bir oz xiralashtirish (effekt uchun) */
+  pointer-events: auto; /* Faqat panelni o'zida sichqoncha ishlashi uchun */
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  flex-grow: 1;
+  padding: 10px 0;
+}
+
+.search-input::placeholder {
+  color: #777;
+}
+
+.search-button {
+  background-color: #222;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.search-button:hover {
+  background-color: #333;
+}
+
+/* Canvas har doim orqada turishi uchun */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
